@@ -5,21 +5,38 @@
     <title>azizbek</title>
 </head>
 <body>
-<form id="form">
-    <label>Parol:
-        <input type="password" id="password" required>
-    </label><br><br>
-
-    <label>Telefon raqami:
-        <input type="text" id="phone" required placeholder="+998-90-123-45-67">
-    </label><br><br>
-
-    <button type="submit">Yuborish</button>
+<form id="adForm">
+    <div>
+        <input type="text" name="title" id="inputTitle" placeholder="title">
+        <input type="text" name="description" id="inputDescription" placeholder="description">
+        <input type="text" name="image_url" id="inputImageUrl" placeholder="image_url">
+        <select name="category" id="selectCategory">
+            <option></option>
+            <option value="books">books</option>
+            <option value="home">home</option>
+            <option value="other">other</option>
+        </select>
+        <select name="condition" id="selectCondition">
+            <option></option>
+            <option value="new">new</option>
+            <option value="used">used</option>
+            <option value="broken">broken</option>
+        </select>
+        <button id="btnSubmit">Submit</button>
+    </div>
 </form>
 
-<div id="message"></div>
+<div id="loadingSpinner"></div>
 
-<script src="main.js"></script>
+<div id="confirmBox" class="box">
+    <p class="confirmText">Uchirib tashlashni xoxlaysizmi?</p>
+    <button class="btnYes" id="btnYes">Ha</button>
+    <button class="btnNo" id="btnNo">Yuq</button>
+</div>
+
+<div id="adsContainer"></div>
+
+<script type="module" src="main.js"></script>
 
 </body>
 </html>
