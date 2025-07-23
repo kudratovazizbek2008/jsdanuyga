@@ -1,42 +1,33 @@
-<!DOCTYPE html>
-<html lang="uz">
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>azizbek</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
-<form id="adForm">
-    <div>
-        <input type="text" name="title" id="inputTitle" placeholder="title">
-        <input type="text" name="description" id="inputDescription" placeholder="description">
-        <input type="text" name="image_url" id="inputImageUrl" placeholder="image_url">
-        <select name="category" id="selectCategory">
-            <option></option>
-            <option value="books">books</option>
-            <option value="home">home</option>
-            <option value="other">other</option>
-        </select>
-        <select name="condition" id="selectCondition">
-            <option></option>
-            <option value="new">new</option>
-            <option value="used">used</option>
-            <option value="broken">broken</option>
-        </select>
-        <button id="btnSubmit">Submit</button>
-    </div>
+<form>
+    <input class="radio_category" id="search" type="text">
+    <div id="result" class="bg-red-300 hidden"></div>
 </form>
-
-<div id="loadingSpinner"></div>
-
-<div id="confirmBox" class="box">
-    <p class="confirmText">Uchirib tashlashni xoxlaysizmi?</p>
-    <button class="btnYes" id="btnYes">Ha</button>
-    <button class="btnNo" id="btnNo">Yuq</button>
-</div>
-
-<div id="adsContainer"></div>
-
-<script type="module" src="main.js"></script>
-
+<label>
+    <input class="radio_category" type="radio" name="category" value="Milliy taomlar">
+    <span>Milliy taomlar</span>
+</label>
+<label>
+    <input class="radio_category" type="radio" name="category" value="Yevropa taomlar">
+    <span>Yevropa taomlar</span>
+</label>
+<label>
+    <input class="radio_category" type="radio" name="category" value="Fastfood taomlar">
+    <span>Fastfood taomlar</span>
+</label>
+<label>
+    <input type="radio" name="category" value="All">
+    <span id="all">All</span>
+</label>
+<script src="main.js"></script>
 </body>
 </html>
