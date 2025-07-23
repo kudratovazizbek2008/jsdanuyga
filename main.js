@@ -1,33 +1,59 @@
-let search = document.getElementById("search");
-let result = document.getElementById("result");
-let all = document.getElementById("all");
-let radio_category = document.querySelectorAll(".radio_category");
-result.style.display = "none";
-search.addEventListener("input", e => {
-    result.innerHTML = ""
-    let resultData = data.filter((item) => {
-        return item.name.toLowerCase().includes(search.value.toLowerCase());
-    })
-    result.classList.remove("hidden");
-    if(search.value.length === 0){
-        result.classList.add("hidden");
+export const products = [
+
+    {
+        id: 1,
+        name: "Samsung Galaxy S24",
+        price: "12,000,000 so'm",
+        category: "telefonlar",
+        image: "📱"
+    },
+    {
+        id: 2,
+        name: "iPhone 15 Pro",
+        price: "18,000,000 so'm",
+        category: "telefonlar",
+        image: "📱"
+    },
+    {
+        id: 3,
+        name: "Xiaomi 14",
+        price: "8,500,000 so'm",
+        category: "telefonlar",
+        image: "📱"
+    },
+    {
+        id: 4,
+        name: "MacBook Air M2",
+        price: "25,000,000 so'm",
+        category: "noutbuklar",
+        image: "💻"
+    },
+    {
+        id: 5,
+        name: "Dell XPS 13",
+        price: "22,000,000 so'm",
+        category: "noutbuklar",
+        image: "💻"
+    },
+    {
+        id: 6,
+        name: "HP Pavilion",
+        price: "15,000,000 so'm",
+        category: "noutbuklar",
+        image: "💻"
+    },
+    {
+        id: 7,
+        name: "Samsung Galaxy A54",
+        price: "6,000,000 so'm",
+        category: "telefonlar",
+        image: "📱"
+    },
+    {
+        id: 8,
+        name: "Lenovo ThinkPad",
+        price: "20,000,000 so'm",
+        category: "noutbuklar",
+        image: "💻"
     }
-    resultData.forEach((item) => {
-        let div = document.createElement("div");
-        div.innerHTML = `
-        <p>${item.name}</p>
-        `
-        result.appendChild(div);
-    })
-})
-radio_category.forEach(radio => {
-    radio.addEventListener("change", e => {
-        let filter = data.filter((item) => {
-            return item.category.toLowerCase().includes(e.target.value.toLowerCase());
-        })
-        renderHtml(filter);
-    })
-})
-all.addEventListener("click", e => {
-    renderHtml(data)
-})
+];

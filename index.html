@@ -1,33 +1,30 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahsulotlar</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form>
-    <input class="radio_category" id="search" type="text">
-    <div id="result" class="bg-red-300 hidden"></div>
-</form>
-<label>
-    <input class="radio_category" type="radio" name="category" value="Milliy taomlar">
-    <span>Milliy taomlar</span>
-</label>
-<label>
-    <input class="radio_category" type="radio" name="category" value="Yevropa taomlar">
-    <span>Yevropa taomlar</span>
-</label>
-<label>
-    <input class="radio_category" type="radio" name="category" value="Fastfood taomlar">
-    <span>Fastfood taomlar</span>
-</label>
-<label>
-    <input type="radio" name="category" value="All">
-    <span id="all">All</span>
-</label>
-<script src="main.js"></script>
+<div class="container">
+    <h1>Mahsulotlar</h1>
+
+    <div class="filters">
+        <button class="filter-btn active" onclick="filterProducts('all')">Hammasi</button>
+        <button class="filter-btn" onclick="filterProducts('telefonlar')">Telefonlar</button>
+        <button class="filter-btn" onclick="filterProducts('noutbuklar')">Noutbuklar</button>
+    </div>
+
+    <input type="text" class="search-box" id="searchInput" placeholder="Mahsulotni qidiring..." oninput="searchProducts()">
+
+    <div class="products-grid" id="productsGrid">
+    </div>
+
+    <div class="no-results" id="noResults" style="display: none;">
+        Hech qanday mahsulot topilmadi
+    </div>
+</div>
+<script type="module" src="data.js"></script>
 </body>
 </html>
